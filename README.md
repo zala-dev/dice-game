@@ -20,7 +20,7 @@ By default there will be 3 rounds.
 
 # Wireframe
 
-## [![hifi wireframe](assets/wireframe/dicegame-hifi-wireframe.drawio.png)]
+![hifi wireframe](assets/wireframe/dicegame-hifi-wireframe.drawio.png)
 
 # Technologies used
 
@@ -56,17 +56,17 @@ By default there will be 3 rounds.
 
 # TO-DO
 
-[x] Setup File / Folder Structure
-[x] Upload dice images to assets -> images folder
-[x] Upload wireframes assets -> wireframe folder
-[ ] Setup HTML
-[ ] Setup CSS
-[ ] Define Model variables and functions
-[ ] Define Controller functions
-[ ] Define View functions
-[ ] Render initial screen
-[ ] Render player turn
-[ ] Render final result and winner
+- [x] Setup File / Folder Structure
+- [x] Upload dice images to assets -> images folder
+- [x] Upload wireframes assets -> wireframe folder
+- [ ] Setup HTML
+- [ ] Setup CSS
+- [ ] Define Model variables and functions
+- [ ] Define Controller functions
+- [ ] Define View functions
+- [ ] Render initial screen
+- [ ] Render player turn
+- [ ] Render final result and winner
 
 ---
 
