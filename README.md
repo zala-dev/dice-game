@@ -10,9 +10,7 @@ The objective is to win maximum rounds. The game is played with two six-sided di
 
 Each player rolls dice on his turn and scores the highest value number which can be made with the two dice numbers. The player with a higher score in each rounds wins the round.
 
-The player winning the maximum number of rounds wins the game.
-
-By default there will be 3 rounds.
+The player winning the maximum number of rounds out of three rounds wins the game.
 
 # Game link
 
@@ -59,7 +57,7 @@ By default there will be 3 rounds.
 - [x] Setup File / Folder Structure
 - [x] Upload dice images to assets -> images folder
 - [x] Upload wireframes assets -> wireframe folder
-- [ ] Setup HTML
+- [x] Setup HTML
 - [ ] Setup CSS
 - [ ] Define Model variables and functions
 - [ ] Define Controller functions
