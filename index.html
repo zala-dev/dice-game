@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- application icon pending -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- css -->
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <title>Beat That Dice Game</title>
+  </head>
+  <body>
+    <!-- game rules / welcome screen -->
+    <section class="game-rules hide">
+      <div class="game-rules-header">
+        <h1 class="game-rules-main-heading">
+          Welcome to <span>Beat That 🎲 Game</span>
+        </h1>
+        <h2 class="game-rules-sub-heading-1">Game Rules</h2>
+      </div>
+      <!-- game objective -->
+      <div class="game-rules-objective">
+        <h2 class="game-rules-sub-heading-2">OBJECTIVE</h2>
+        <p class="game-rules-text">
+          The objective of <span>Beat That Dice Game</span> is to win maximum
+          rounds. The game is played with two six-sided dice.
+        </p>
+      </div>
+
+      <!-- gameplay instructions -->
+      <div class="game-rules-gameplay">
+        <h2 class="game-rules-sub-heading-2">GAMEPLAY</h2>
+        <p class="game-rules-text">
+          Each player rolls dice on his turn and scores the highest value number
+          which can be made with the two dice numbers. The player with a higher
+          score in each rounds wins the round. The player winning the maximum
+          number of rounds out of three rounds wins the game.
+        </p>
+      </div>
+      <button class="btn-begin">Begin</button>
+    </section>
+    <!-- game title -->
+    <header class="header">Beat That 🎲 Game</header>
+    <!-- game main container -->
+    <main class="main-container">
+      <div class="winner"></div>
+      <!-- player section -->
+      <section class="player-container">
+        <h2 class="current-turn">CURRENT TURN</h2>
+        <img
+          class="user-image"
+          src="/assets/images/player-profile-image.png"
+          alt="player image"
+        />
+        <p class="rounds-won">
+          Rounds Won <span class="player-win-score">0</span>
+        </p>
+        <p class="current-score">
+          Score <span class="player-current-score">0</span>
+        </p>
+      </section>
+      <!-- control section -->
+      <section class="controls">
+        <!-- round display -->
+        <div class="round-display">
+          <h2 class="round-text">Round</h2>
+          <p class="round-number">1</p>
+        </div>
+        <!-- reset / new game button -->
+        <button class="btn btn-new">New Game</button>
+        <!-- dice image -->
+        <div class="dice-container">
+          <img
+            src="/assets/images/dice-1.png"
+            alt="playing dice-1"
+            class="dice dice-1 hidden"
+          />
+          <img
+            src="/assets/images/dice-2.png"
+            alt="playing dice-2"
+            class="dice dice-2 hidden"
+          />
+        </div>
+        <!-- dice roll -->
+        <button class="btn btn-roll">Roll Dice</button>
+      </section>
+      <!-- computer section -->
+      <section class="computer-container">
+        <h2 class="current-turn">CURRENT TURN</h2>
+        <img
+          class="user-image"
+          src="/assets/images/computer-profile-image.png"
+          alt="computer profile image"
+        />
+        <p class="rounds-won">
+          Rounds Won <span class="computer-win-score">0</span>
+        </p>
+        <p class="current-score">
+          Score <span class="computer-current-score">0</span>
+        </p>
+      </section>
+    </main>
+    <!-- footer / credits -->
+    <footer class="footer">
+      Image by
+      <a
+        href="https://www.freepik.com/free-psd/3d-icon-social-media-app_36190320.htm#query=user%20icon%20png&position=6&from_view=keyword&track=ais&uuid=36b8411e-2e89-462c-92f9-9276468f63fb"
+        >Freepik</a
+      >
+    </footer>
+    <!-- javascript -->
+    <script src="./src/scripts/index.js"></script>
+  </body>
+</html>
