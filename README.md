@@ -58,7 +58,8 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - [x] Upload dice images to assets -> images folder
 - [x] Upload wireframes assets -> wireframe folder
 - [x] Setup HTML
-- [ ] Setup CSS
+- [x] Setup CSS
+- [ ] Write media query for responsive design.
 - [ ] Define Model variables and functions
 - [ ] Define Controller functions
 - [ ] Define View functions
