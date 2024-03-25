@@ -60,9 +60,9 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - [x] Setup HTML
 - [x] Setup CSS
 - [x] Write media query for responsive design
-- [x] Define Model variables and functions
-- [x] Define View variables
-- [x] Define View functions
+- [x] Define Model variables - application state
+- [x] Define View variables - dom/ui
+- [ ] Define View functions
 - [ ] Define Controller functions
 - [ ] Render initial screen
 - [ ] Render player turn
