@@ -323,3 +323,150 @@ a {
   padding: 2rem 0;
   color: var(--text-white);
 }
+
+/* Media query */
+
+@media screen and (min-width: 80rem) {
+  /* Game rules  */
+  .game-rules.hide {
+    display: block;
+  }
+
+  .game-rules {
+    width: var(--max-width-mobile);
+    justify-content: center;
+    background: var(--btn-border-clr-primary);
+  }
+
+  .game-rules-main-heading {
+    visibility: hidden;
+  }
+
+  .game-rules-sub-heading-1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: inherit;
+  }
+
+  .game-rules-objective {
+    margin-bottom: 3rem;
+  }
+
+  .game-rules-sub-heading-2 {
+    font-size: 2rem;
+  }
+
+  .game-rules-text {
+    font-size: 1.8rem;
+  }
+
+  .btn-begin {
+    visibility: hidden;
+  }
+
+  /* Header */
+  .header {
+    font-size: 5.5rem;
+    margin-left: 35rem;
+  }
+
+  /* Main container */
+  .main-container {
+    height: auto;
+    max-width: 70rem;
+    width: 100rem;
+    padding: 8rem 0;
+    margin-left: 35rem;
+    gap: 5rem;
+  }
+
+  /* Player */
+
+  .user-image {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .rounds-won {
+    font-size: 2rem;
+  }
+
+  .rounds-won span {
+    display: block;
+    font-weight: 300;
+    font-size: 3rem;
+  }
+
+  .current-turn {
+    font-size: 1.85rem;
+  }
+
+  .current-score {
+    font-size: 1.8rem;
+    padding: 1rem 3.5rem;
+  }
+
+  /* Control  */
+
+  .current-score span {
+    font-size: 2rem;
+  }
+
+  .round-display {
+    width: 19rem;
+    border-bottom: 0.5rem;
+  }
+
+  .round-text {
+    font-size: 2.25rem;
+  }
+
+  .round-number {
+    font-size: 3rem;
+  }
+
+  .btn-new {
+    width: 19rem;
+    padding: 1.5rem 2.5rem;
+    font-size: 1.75rem;
+    border-radius: 0.5rem;
+  }
+
+  .btn-new:hover {
+    opacity: 0.75;
+  }
+
+  .dice-container {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    border: 0.1rem solid var(--bg-white-25);
+    padding: 1.5rem;
+    background-color: var(--bg-dark-15);
+  }
+
+  .dice {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 5px;
+  }
+
+  .btn-roll {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+    border: 1rem solid var(--btn-border-clr-primary);
+    background-color: var(--bg-white-35);
+    box-shadow: 0 6px 0px var(--bg-white-55);
+    font-size: 2rem;
+  }
+
+  .btn-roll:hover {
+    opacity: 0.75;
+  }
+
+  /* Footer  */
+  .footer {
+    margin-left: 35rem;
+  }
+}
