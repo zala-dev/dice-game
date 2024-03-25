@@ -59,7 +59,7 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - [x] Upload wireframes assets -> wireframe folder
 - [x] Setup HTML
 - [x] Setup CSS
-- [ ] Write media query for responsive design.
+- [x] Write media query for responsive design.
 - [ ] Define Model variables and functions
 - [ ] Define Controller functions
 - [ ] Define View functions
