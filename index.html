@@ -53,10 +53,10 @@
           alt="player image"
         />
         <p class="rounds-won">
-          Rounds Won <span class="player-win-score">0</span>
+          Rounds Won <span class="player-win-score"></span>
         </p>
         <p class="current-score">
-          Score <span class="player-current-score">0</span>
+          Score <span class="player-current-score"></span>
         </p>
       </section>
       <!-- control section -->
@@ -64,22 +64,14 @@
         <!-- round display -->
         <div class="round-display">
           <h2 class="round-text">Round</h2>
-          <p class="round-number">1</p>
+          <p class="round-number"></p>
         </div>
         <!-- reset / new game button -->
         <button class="btn btn-new">New Game</button>
         <!-- dice image -->
         <div class="dice-container">
-          <img
-            src="/assets/images/dice-1.png"
-            alt="playing dice-1"
-            class="dice dice-1 hidden"
-          />
-          <img
-            src="/assets/images/dice-2.png"
-            alt="playing dice-2"
-            class="dice dice-2 hidden"
-          />
+          <img src="" alt="playing dice-1" class="dice dice-1 hidden" />
+          <img src="" alt="playing dice-2" class="dice dice-2 hidden" />
         </div>
         <!-- dice roll -->
         <button class="btn btn-roll">Roll Dice</button>
@@ -93,10 +85,10 @@
           alt="computer profile image"
         />
         <p class="rounds-won">
-          Rounds Won <span class="computer-win-score">0</span>
+          Rounds Won <span class="computer-win-score"></span>
         </p>
         <p class="current-score">
-          Score <span class="computer-current-score">0</span>
+          Score <span class="computer-current-score"></span>
         </p>
       </section>
     </main>
@@ -109,6 +101,9 @@
       >
     </footer>
     <!-- javascript -->
-    <script src="./src/scripts/index.js"></script>
+    <script type="module" src="./src/scripts/index.js"></script>
+    <!-- <script type="module" src="./src/scripts/Controller/controller.js"></script> -->
+    <!-- <script type="module" src="./src/scripts/View/view.js"></script> -->
+    <!-- <script type="module" src="./src/scripts/Controller/controller.js"></script> -->
   </body>
 </html>
