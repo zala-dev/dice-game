@@ -1,0 +1,325 @@
+/* Web fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Rubik+Scribble&display=swap");
+
+/* css variables */
+:root {
+  --text-dark: rgba(0, 0, 0, 0.65);
+  --text-white: #f9f9f9;
+  --btn-border-clr-primary: #2da4ff;
+  --bg-white: #f9f9f9;
+  --bg-white-25: rgba(255, 255, 255, 0.25);
+  --bg-white-35: rgba(255, 255, 255, 0.35);
+  --bg-white-55: rgba(255, 255, 255, 0.55);
+  --bg-dark-15: rgba(0, 0, 0, 0.15);
+  --bg-dark-25: rgba(0, 0, 0, 0.25);
+  --bg-dark-65: rgba(0, 0, 0, 0.65);
+  --body-height: 100vh;
+  --max-width-mobile: 350px;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Rubik Scribble", system-ui;
+  --bg-gradient: linear-gradient(
+    90deg,
+    hsla(217, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+  --btn-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  --text-shadow-title: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* general style */
+html {
+  font-size: 62.5%; /* convert font size 1rem = 10px */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.6;
+  height: var(--body-height);
+  color: var(--text-dark);
+  background: var(--bg-gradient);
+
+  display: grid;
+  place-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Game Rules */
+
+.game-rules.hide {
+  display: none;
+}
+
+.game-rules {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-gradient);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+  padding: 5rem;
+}
+
+.game-rules-main-heading {
+  font-size: 2rem;
+}
+
+.game-rules-main-heading span {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: 2.75rem;
+  color: var(--text-white);
+}
+
+.game-rules-sub-heading-1 {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.game-rules-sub-heading-2 {
+  font-size: 1.45rem;
+  background: var(--bg-dark-1);
+  color: var(--text-white);
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.game-rules-text {
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.btn-begin {
+  width: 8rem;
+  height: 8rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: inherit;
+  border: 1rem solid var(--btn-border-clr-primary);
+  background-color: var(--bg-white-35);
+  box-shadow: 0 6px 0px var(--bg-white-55);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  border-radius: 100%;
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Header - game logo/title */
+.header {
+  font-family: "Rubik Scribble", system-ui;
+  font-weight: 400;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: var(--text-dark);
+  background-color: var(--bg-dark-25);
+  text-shadow: var(--text-shadow-title);
+}
+
+/* Main container */
+.main-container {
+  position: relative;
+  height: auto;
+  max-width: var(--max-width-mobile);
+  width: 100rem;
+
+  background-color: var(--bg-white-35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem var(--bg-dark-25);
+  padding: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.main-container > * {
+  height: 100%;
+}
+
+/* winner  */
+.winner {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: none;
+  animation: win 1.5s linear infinite;
+}
+
+@keyframes win {
+  from {
+    background-color: rgba(120, 206, 121, 0.3);
+  }
+
+  to {
+    background-color: rgba(120, 206, 121, 0.7);
+  }
+}
+
+.winner.player {
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.winner.computer {
+  display: block;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+/* Player/computer section */
+.player-container,
+.computer-container,
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-turn {
+  visibility: hidden;
+  font-size: 1rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid var(--bg-dark-15);
+  margin-bottom: 1rem;
+  color: var(--bg-dark-65);
+}
+
+.current-turn.player {
+  visibility: visible;
+}
+
+.current-turn.computer {
+  visibility: visible;
+}
+
+.user-image {
+  width: 8rem;
+  height: 8rem;
+}
+
+.rounds-won {
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 7rem;
+}
+.rounds-won span {
+  display: block;
+  font-weight: 300;
+  font-size: 1.75rem;
+}
+
+.current-score {
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: var(--bg-white);
+  padding: 1rem 1.75rem;
+}
+
+.current-score span {
+  display: block;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+/* Control section */
+.controls {
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.round-display {
+  border: 0.1rem dotted var(--bg-dark-25);
+  width: 10rem;
+  padding: 0.5rem 0;
+  background-color: var(--bg-dark-25);
+  color: var(--text-white);
+  text-transform: uppercase;
+}
+
+.round-number {
+  font-size: 2rem;
+}
+
+.btn-new {
+  background-color: transparent;
+  outline: none;
+  width: 10rem;
+  padding: 0.5rem 0;
+  color: var(--text-white);
+  background-color: var(--btn-border-clr-primary);
+  border: 2px solid var(--bg-white-35);
+  text-transform: uppercase;
+  margin: 3rem 0;
+  cursor: pointer;
+}
+
+.dice-container {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  border: 0.1rem solid var(--bg-white-25);
+  padding: 0.5rem;
+  background-color: var(--bg-dark-15);
+}
+
+.dice {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 5px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.btn-roll {
+  padding: 2rem 2rem;
+  border-radius: 100%;
+  border: 1rem solid var(--btn-border-clr-primary);
+  background-color: var(--bg-white-35);
+  box-shadow: 0 6px 0px var(--bg-white-55);
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--text-white);
+}
