@@ -31,4 +31,50 @@ const view = {
   computerCurrentTurn: document.querySelector(
     ".computer-container .current-turn"
   ),
+  updateRoundNumber: (round) => {
+    view.roundNumberEl.textContent = round;
+  },
+
+  updatePlayerCurrentScore: (playerScore = 0) => {
+    view.playerScoreEl.textContent = playerScore;
+  },
+
+  updateComputerCurrentScore: (computerScore = 0) => {
+    view.computerScoreEl.textContent = computerScore;
+  },
+
+  updatePlayerRoundWon: (playerRoundWon = 0) => {
+    view.playerRoundWinScoreEl.textContent = playerRoundWon;
+  },
+
+  updateComputerRoundWon: (computerRoundWon = 0) => {
+    view.computerRoundWinScoreEl.textContent = computerRoundWon;
+  },
+
+  renderCurrentTurn: (player) => {
+    const playerEl = view.playerCurrentTurn;
+    const computerEl = view.computerCurrentTurn;
+
+    if (!playerEl || !computerEl) {
+      return;
+    }
+    // check if current player
+    if (player === "player") {
+      if (playerEl && playerEl.classList.contains("current-turn")) {
+        playerEl.classList.add("player");
+        computerEl.classList.remove("computer");
+        return;
+      }
+    }
+
+    // check if current computer
+    if (player === "computer") {
+      if (computerEl && computerEl.classList.contains("current-turn")) {
+        computerEl.classList.add("computer");
+        playerEl.classList.remove("player");
+
+        return;
+      }
+    }
+  },
 };
