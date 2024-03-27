@@ -63,9 +63,11 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - [x] Define Model variables - application state
 - [x] Define View variables - dom/ui
 - [x] Define View functions
-- [ ] Define Controller functions
-- [ ] Render initial screen
-- [ ] Render player turn
+- [x] Define Controller functions
+- [x] Render initial screen
+- [x] Render dice
+- [x] Render player turn
+- [x] Render who won the round and update the rounds won score
 - [ ] Render final result and winner
 
 ---
