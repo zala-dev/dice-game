@@ -73,7 +73,8 @@ a {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  justify-content: center;
+  gap: 3rem;
   text-align: center;
   padding: 5rem;
 }
@@ -91,28 +92,30 @@ a {
 
 .game-rules-sub-heading-1 {
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .game-rules-sub-heading-2 {
-  font-size: 1.45rem;
+  font-size: 1.95rem;
   background: var(--bg-dark-1);
   color: var(--text-white);
   letter-spacing: 0.1rem;
   font-weight: 400;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--bg-dark-65);
 }
 
 .game-rules-text {
-  font-size: 1.35rem;
-  font-weight: 400;
+  color: var(--text-white);
+  font-size: 1.55rem;
+  font-weight: 300;
 }
 
 .btn-begin {
-  width: 8rem;
-  height: 8rem;
+  width: 10rem;
+  height: 10rem;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: bold;
   color: inherit;
   border: 1rem solid var(--btn-border-clr-primary);
   background-color: var(--bg-white-35);
@@ -163,20 +166,11 @@ a {
 /* winner  */
 .winner {
   position: absolute;
+  background: url("/assets/images/winner.gif") rgba(255, 255, 255, 0.45);
   width: 50%;
   height: 100%;
   display: none;
-  animation: win 1.5s linear infinite;
-}
-
-@keyframes win {
-  from {
-    background-color: rgba(120, 206, 121, 0.3);
-  }
-
-  to {
-    background-color: rgba(120, 206, 121, 0.7);
-  }
+  animation: 1.5s linear infinite;
 }
 
 .winner.player {
@@ -328,46 +322,43 @@ a {
 
 @media screen and (min-width: 80rem) {
   /* Game rules  */
-  .game-rules.hide {
-    display: block;
-  }
 
-  .game-rules {
-    width: var(--max-width-mobile);
-    justify-content: center;
-    background: var(--btn-border-clr-primary);
-  }
-
-  .game-rules-main-heading {
-    visibility: hidden;
+  .game-rules-main-heading,
+  .game-rules-main-heading span {
+    font-size: 5rem;
   }
 
   .game-rules-sub-heading-1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     margin-bottom: 2rem;
     color: inherit;
   }
 
-  .game-rules-objective {
-    margin-bottom: 3rem;
+  .game-rules-objective,
+  .game-rules-gameplay {
+    width: 60rem;
+    margin: 0 auto;
+    margin-bottom: 5rem;
   }
 
   .game-rules-sub-heading-2 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .game-rules-text {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
-  .btn-begin {
-    visibility: hidden;
+  .game-rules .btn-begin {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2.5rem;
+    color: var(--bg-dark-65);
   }
 
   /* Header */
   .header {
     font-size: 5.5rem;
-    margin-left: 35rem;
   }
 
   /* Main container */
@@ -376,7 +367,6 @@ a {
     max-width: 70rem;
     width: 100rem;
     padding: 8rem 0;
-    margin-left: 35rem;
     gap: 5rem;
   }
 
@@ -463,10 +453,5 @@ a {
 
   .btn-roll:hover {
     opacity: 0.75;
-  }
-
-  /* Footer  */
-  .footer {
-    margin-left: 35rem;
   }
 }
