@@ -326,26 +326,28 @@ a {
 
 @media screen and (min-width: 748px) {
   /* Game rules  */
-
+  .game-rules {
+    gap: 0;
+  }
   .game-rules-main-heading {
-    font-size: 3.75rem;
+    font-size: 2.75rem;
   }
   .game-rules-main-heading span {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .game-rules-sub-heading-1 {
-    font-size: 3.75rem;
+    font-size: 2.75rem;
     margin-bottom: 2rem;
     color: inherit;
   }
 
   .game-rules-sub-heading-2 {
-    font-size: 2.75rem;
+    font-size: 2rem;
   }
 
   .game-rules-text {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
 
   .game-rules-objective,
@@ -356,9 +358,9 @@ a {
   }
 
   .game-rules .btn-begin {
-    width: 13rem;
-    height: 13rem;
-    font-size: 2.75rem;
+    width: 12rem;
+    height: 12rem;
+    font-size: 2.5rem;
     color: var(--bg-dark-65);
   }
 
