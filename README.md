@@ -68,7 +68,8 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - [x] Render dice
 - [x] Render player turn
 - [x] Render who won the round and update the rounds won score
-- [ ] Render final result and winner
+- [x] Render final result and winner
+- [] Refactor to improve code readability and maintainability
 
 ---
 
