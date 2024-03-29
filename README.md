@@ -69,8 +69,8 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - [x] Render player turn
 - [x] Render who won the round and update the rounds won score
 - [x] Render final result and winner
-- [] Refactor to improve code readability and maintainability
-- [] Publish application on Github pages
+- [x] Refactor to improve code readability and maintainability
+- [x] Publish application on Github pages
 
 ---
 
