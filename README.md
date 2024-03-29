@@ -38,7 +38,6 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - I want to know if I have won or lost at the end of the last round.
 - I want option to reset / start a new game without refreshing the page.
 - I want the game to be responsive so that I can play it on different devices.
-- OPTIONAL: I want the game to have sound effects on each dice roll.
 
 ---
 
