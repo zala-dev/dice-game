@@ -14,7 +14,7 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 
 # Game link
 
----
+[Beat That Dice Game](https://zala-dev.github.io/dice-game/)
 
 # Wireframe
 
