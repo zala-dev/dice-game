@@ -169,7 +169,7 @@ a {
 /* winner  */
 .winner {
   position: absolute;
-  background: url("/assets/images/winner.gif") rgba(255, 255, 255, 0.45);
+  background: url("assets/images/winner.gif") rgba(255, 255, 255, 0.45);
   width: 50%;
   height: 100%;
   display: none;
