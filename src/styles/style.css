@@ -148,7 +148,9 @@ a {
   width: 100rem;
 
   background-color: var(--bg-white-35);
+  -webkit-backdrop-filter: blur(200px);
   backdrop-filter: blur(200px);
+  -webkit-filter: blur();
   filter: blur();
   box-shadow: 0 3rem 5rem var(--bg-dark-25);
   padding: 3rem;
@@ -170,6 +172,7 @@ a {
   width: 50%;
   height: 100%;
   display: none;
+  -webkit-animation: 1.5s linear infinite;
   animation: 1.5s linear infinite;
 }
 
