@@ -92,8 +92,8 @@ const view = {
   // Function to render the dice rolls on the UI
   renderDice: (dice1, dice2) => {
     if (dice1 && dice2) {
-      view.dice1El.src = `/assets/images/dice-${dice1}.png`;
-      view.dice2El.src = `/assets/images/dice-${dice2}.png`;
+      view.dice1El.src = `assets/images/dice-${dice1}.png`;
+      view.dice2El.src = `assets/images/dice-${dice2}.png`;
 
       view.dice1El.classList.toggle("hidden");
       view.dice2El.classList.toggle("hidden");
