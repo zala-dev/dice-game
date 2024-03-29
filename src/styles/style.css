@@ -324,7 +324,7 @@ a {
 
 /* Media query */
 
-@media screen and (min-width: 80rem) {
+@media screen and (min-width: 748px) {
   /* Game rules  */
 
   .game-rules-main-heading {
