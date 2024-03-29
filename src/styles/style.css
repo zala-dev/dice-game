@@ -80,7 +80,7 @@ a {
 }
 
 .game-rules-main-heading {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .game-rules-main-heading span {
@@ -92,11 +92,11 @@ a {
 
 .game-rules-sub-heading-1 {
   margin-top: 2rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .game-rules-sub-heading-2 {
-  font-size: 1.95rem;
+  font-size: 2rem;
   background: var(--bg-dark-1);
   color: var(--text-white);
   letter-spacing: 0.1rem;
@@ -107,13 +107,14 @@ a {
 
 .game-rules-text {
   color: var(--text-white);
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
 .btn-begin {
-  width: 10rem;
-  height: 10rem;
+  width: 11rem;
+  height: 11rem;
+  font-size: 2.25rem;
   font-family: inherit;
   font-weight: bold;
   color: inherit;
@@ -326,15 +327,25 @@ a {
 @media screen and (min-width: 80rem) {
   /* Game rules  */
 
-  .game-rules-main-heading,
+  .game-rules-main-heading {
+    font-size: 3.75rem;
+  }
   .game-rules-main-heading span {
     font-size: 5rem;
   }
 
   .game-rules-sub-heading-1 {
-    font-size: 4.5rem;
+    font-size: 3.75rem;
     margin-bottom: 2rem;
     color: inherit;
+  }
+
+  .game-rules-sub-heading-2 {
+    font-size: 2.75rem;
+  }
+
+  .game-rules-text {
+    font-size: 2.5rem;
   }
 
   .game-rules-objective,
@@ -344,18 +355,10 @@ a {
     margin-bottom: 5rem;
   }
 
-  .game-rules-sub-heading-2 {
-    font-size: 3rem;
-  }
-
-  .game-rules-text {
-    font-size: 2rem;
-  }
-
   .game-rules .btn-begin {
-    width: 12rem;
-    height: 12rem;
-    font-size: 2.5rem;
+    width: 13rem;
+    height: 13rem;
+    font-size: 2.75rem;
     color: var(--bg-dark-65);
   }
 
