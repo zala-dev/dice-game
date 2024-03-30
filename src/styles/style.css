@@ -25,7 +25,8 @@
     hsla(186, 100%, 69%, 1) 100%
   );
   --btn-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  --text-shadow-title: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+  --text-shadow-title: 2px 2px 0px var(--bg-white),
+    5px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 /* reset */
