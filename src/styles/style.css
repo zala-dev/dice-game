@@ -4,13 +4,14 @@
 
 /* css variables */
 :root {
-  --text-dark: rgba(0, 0, 0, 0.65);
+  --text-dark: #333333;
   --text-white: #f9f9f9;
   --btn-border-clr-primary: #2da4ff;
   --bg-white: #f9f9f9;
   --bg-white-25: rgba(255, 255, 255, 0.25);
   --bg-white-35: rgba(255, 255, 255, 0.35);
   --bg-white-55: rgba(255, 255, 255, 0.55);
+  --bg-dark: #3333333;
   --bg-dark-15: rgba(0, 0, 0, 0.15);
   --bg-dark-25: rgba(0, 0, 0, 0.25);
   --bg-dark-65: rgba(0, 0, 0, 0.65);
@@ -74,7 +75,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 3rem;
   text-align: center;
   padding: 5rem;
 }
