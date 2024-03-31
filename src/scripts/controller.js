@@ -118,8 +118,8 @@ function controller() {
     const combination1 = dice1.toString() + dice2.toString();
     let combination2 = dice2.toString() + dice1.toString();
 
-    if (combination2 === combination1 || combination1 === combination2) {
-      combination2 = dice2.toString() + dice1.toString();
+    if (combination2 === combination1) {
+      combination2 += "0";
     }
 
     return combination1 > combination2 ? combination1 : combination2;
