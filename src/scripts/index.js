@@ -1,6 +1,6 @@
 /* Constant */
 //the total number of rounds in the game
-const TOTAL_ROUNDS = 2;
+const TOTAL_ROUNDS = 3;
 
 /* Model */
 //the model of the game, containing various game state properties.
@@ -165,7 +165,6 @@ function controller() {
     view.updateRoundNumber(model.currentRoundNumber);
     view.rollDiceBtn.removeAttribute("disabled");
     view.roundNumberContainer.style.visibility = "visible";
-    view.curentTurnEl.style.visibility = "visible";
     view.diceContainer.style.visibility = "visible";
     view.rollDiceBtn.style.visibility = "visible";
     view.currentScoreEls.forEach((el) => (el.style.visibility = "visible"));
