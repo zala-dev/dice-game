@@ -320,7 +320,7 @@ a {
 
 button:disabled,
 button[disabled] {
-  border: 1px solid var(--bg-dark-25);
+  border: 1rem solid var(--bg-dark-25);
   background-color: var(--bg-dark-15);
   color: var(--text-white);
   cursor: no-drop;
