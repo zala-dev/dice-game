@@ -25,27 +25,33 @@ const view = {
   computerCurrentTurnEl: document.querySelector(
     ".computer-container .current-turn"
   ),
-  curentTurnEl: document.querySelector(".current-turn"),
+  currentTurnEl: document.querySelector(".current-turn"),
+
   // Function to update the round number displayed on the UI
   updateRoundNumber: (round) => {
     view.roundNumberEl.textContent = round;
   },
+
   // Function to update the player's current score displayed on the UI
   updatePlayerCurrentScore: (playerScore = 0) => {
     view.playerScoreEl.textContent = playerScore;
   },
+
   // Function to update the computer's current score displayed on the UI
   updateComputerCurrentScore: (computerScore = 0) => {
     view.computerScoreEl.textContent = computerScore;
   },
+
   // Function to update the number of rounds won by the player displayed on the UI
   updatePlayerRoundWon: (playerRoundWon = 0) => {
     view.playerRoundWinScoreEl.textContent = playerRoundWon;
   },
+
   // Function to update the computer's round won by the computer displayed on the UI.
   updateComputerRoundWon: (computerRoundWon = 0) => {
     view.computerRoundWinScoreEl.textContent = computerRoundWon;
   },
+
   // Function to render the current turn, highlighting the active player's turn on the UI.
   renderCurrentTurn: (player) => {
     const playerEl = view.playerCurrentTurnEl;
@@ -54,7 +60,7 @@ const view = {
     if (!playerEl || !computerEl) {
       return;
     }
-    // check if current player
+
     if (player === "player") {
       if (playerEl && playerEl.classList.contains("current-turn")) {
         playerEl.classList.add("player");
@@ -63,7 +69,6 @@ const view = {
       }
     }
 
-    // check if current computer
     if (player === "computer") {
       if (computerEl && computerEl.classList.contains("current-turn")) {
         computerEl.classList.add("computer");
@@ -72,20 +77,21 @@ const view = {
       }
     }
   },
+
   // Function to render the dice rolls on the UI
   renderDice: (dice1, dice2) => {
+    view.dice1El.classList.remove("hidden");
+    view.dice2El.classList.remove("hidden");
     if (dice1 && dice2) {
       view.dice1El.src = `assets/images/dice-${dice1}.png`;
       view.dice2El.src = `assets/images/dice-${dice2}.png`;
-
-      view.dice1El.classList.toggle("hidden");
-      view.dice2El.classList.toggle("hidden");
     }
   },
+
   // Function to render the winner of the game on the UI
   renderWinner: (winner) => {
-    // hide current turn UI
-    view.curentTurnEl.style.visibility = "hidden";
+    // hide player turn UI
+    view.currentTurnEl.classList.remove("player");
 
     // hide dice images
     view.diceContainer.style.visibility = "hidden";
