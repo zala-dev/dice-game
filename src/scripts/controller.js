@@ -106,7 +106,7 @@ function controller() {
     let dice1 = rollSingleDice();
     let dice2 = rollSingleDice();
 
-    while (dice1 === dice2) {
+    while (dice2 === dice1) {
       dice2 = rollSingleDice();
     }
 
@@ -115,14 +115,10 @@ function controller() {
 
   // Function to get the maximum combination of two dice
   const getMaxCombination = (dice1, dice2) => {
-    const combination1 = dice1.toString() + dice2.toString();
-    let combination2 = dice2.toString() + dice1.toString();
+    const combination1 = parseInt(dice1.toString() + dice2.toString());
+    const combination2 = parseInt(dice2.toString() + dice1.toString());
 
-    if (combination2 === combination1) {
-      combination2 += "0";
-    }
-
-    return combination1 > combination2 ? combination1 : combination2;
+    return Math.max(combination1, combination2);
   };
 
   // Function to update the score based on the active player
