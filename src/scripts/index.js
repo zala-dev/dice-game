@@ -132,35 +132,41 @@ function controller() {
   // Function to initialize the game state and UI
   const init = () => {
     // Initialize game state
+    initialiseGameState();
+    // Reset / initiate game UI
+    resetGameUI();
+  };
+
+  // Function to start a new game and reset all state
+  const newGame = () => {
+    // Reset game state
+    resetGameState();
+    // Reset game UI
+    resetGameUI();
+  };
+
+  // Function to initialise game state
+  const initialiseGameState = () => {
     model.activePlayer;
     model.currentRoundNumber;
     model.playerCurrentScore;
     model.computerCurrentScore;
     model.playerRoundWon;
     model.computerRoundWon;
-
-    // Update UI
-    view.gameRulesScreen.classList.toggle("hide");
-    view.updateRoundNumber(model.currentRoundNumber);
-    view.updatePlayerCurrentScore();
-    view.updateComputerCurrentScore();
-    view.updatePlayerRoundWon();
-    view.updateComputerRoundWon();
-    view.renderCurrentTurn(model.activePlayer);
-    view.rollDiceBtn.removeAttribute("disabled");
   };
 
-  // Function to start a new game and reset all state
-  const newGame = () => {
-    // Reset game state
+  // Function to reset game state
+  const resetGameState = () => {
     model.activePlayer = "player";
     model.currentRoundNumber = 1;
     model.playerRoundWon = 0;
     model.playerCurrentScore = 0;
     model.computerCurrentScore = 0;
     model.computerRoundWon = 0;
+  };
 
-    // Reset UI
+  // function to reset / initiate game UI
+  const resetGameUI = () => {
     view.gameRulesScreen.classList.toggle("hide");
     view.updateRoundNumber(model.currentRoundNumber);
     view.rollDiceBtn.removeAttribute("disabled");
@@ -177,6 +183,7 @@ function controller() {
     view.updateComputerRoundWon();
     view.renderCurrentTurn(model.activePlayer);
   };
+
   // Function to start the game by displaying game instructions
   const startGame = () => {
     view.gameRulesScreen.classList.toggle("hide");
@@ -275,16 +282,20 @@ function controller() {
 
   // Function to roll the dice and update scores accordingly and check for winner
   const rollDice = () => {
+    // Disables roll dice and new game buttons during the roll
     view.rollDiceBtn.setAttribute("disabled", true);
     view.newGameBtn.setAttribute("disabled", true);
-
+    // Rolls two dice on the UI
     const [dice1, dice2] = rollTwoDice();
     const maximum = getMaxCombination(dice1, dice2);
-
+    // Renders the dice on the UI
     view.renderDice(dice1, dice2);
+    // Updates the score of the active player based on the maximum combination
     updateScoreActivePlayer(maximum);
+    // Switches the active player
     switchPlayer();
 
+    // Checks for a round winner, reset scores with delay, updates round number, and check for the game winner
     if (model.playerCurrentScore > 0 && model.computerCurrentScore > 0) {
       checkRoundWinner();
       resetScoreWithDelay();
