@@ -318,12 +318,18 @@ a {
 
 /* disabled button */
 
-button:disabled,
-button[disabled] {
-  border: 1rem solid var(--bg-dark-25);
+.btn-roll:disabled,
+.btn-roll[disabled],
+.btn-new:disabled,
+.btn-new[disabled] {
   background-color: var(--bg-dark-15);
   color: var(--text-white);
   cursor: no-drop;
+}
+
+.btn-roll:disabled,
+.btn-roll[disabled] {
+  border: 1rem solid var(--bg-dark-25);
 }
 
 /* Footer */
