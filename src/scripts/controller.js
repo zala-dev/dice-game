@@ -106,7 +106,7 @@ function controller() {
     let dice1 = rollSingleDice();
     let dice2 = rollSingleDice();
 
-    if (dice1 === dice2) {
+    while (dice1 === dice2) {
       dice2 = rollSingleDice();
     }
 
