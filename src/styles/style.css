@@ -316,6 +316,20 @@ a {
   cursor: pointer;
 }
 
+/* disabled button */
+
+button:disabled,
+button[disabled] {
+  border: 1px dashed var(--bg-dark-25);
+  background-color: var(--bg-dark-15);
+  color: var(--text-white);
+  cursor: no-drop;
+}
+
+button:disabled:hover {
+  opacity: 1;
+}
+
 /* Footer */
 
 .footer {
