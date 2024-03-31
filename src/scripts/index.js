@@ -1,7 +1,6 @@
 /* Constant */
-
 //the total number of rounds in the game
-const TOTAL_ROUNDS = 3;
+const TOTAL_ROUNDS = 2;
 
 /* Model */
 //the model of the game, containing various game state properties.
@@ -21,7 +20,7 @@ const view = {
   // DOM elements used in the game / UI variables
   gameRulesScreen: document.querySelector(".game-rules"),
   gameInstructionBeginBtn: document.querySelector(".btn-begin"),
-  currentScoreContainer: document.querySelectorAll(".current-score"),
+  currentScoreEls: document.querySelectorAll(".current-score"),
   playerRoundWinScoreEl: document.querySelector(".player-win-score"),
   playerScoreEl: document.querySelector(".player-current-score"),
   playerContainer: document.querySelector(".player-container"),
@@ -101,29 +100,28 @@ const view = {
   },
   // Function to render the winner of the game on the UI
   renderWinner: (winner) => {
-    // hide score UI
     // hide current turn UI
     view.curentTurnEl.style.visibility = "hidden";
 
     // hide dice images
     view.diceContainer.style.visibility = "hidden";
 
+    // hide roll btn
+    view.rollDiceBtn.style.visibility = "hidden";
+
+    // hide current round number display
+    view.roundNumberContainer.style.visibility = "hidden";
+
     // delay hide score
     setTimeout(() => {
-      view.currentScoreContainer.forEach(
-        (el) => (el.style.visibility = "hidden")
-      );
+      view.currentScoreEls.forEach((el) => (el.style.visibility = "hidden"));
     }, 2000);
 
     // check the winner and update UI
     if (winner === "player") {
       view.winnerEl.classList.add("player");
-      view.roundNumberContainer.innerHTML =
-        "<h2 class='round-text'>Player Won</h2>";
     } else {
       view.winnerEl.classList.add("computer");
-      view.roundNumberContainer.innerHTML =
-        "<h2 class='round-text'>Computer Won</h2>";
     }
   },
 };
@@ -151,6 +149,35 @@ function controller() {
     view.renderCurrentTurn(model.activePlayer);
     view.rollDiceBtn.removeAttribute("disabled");
   };
+
+  // Function to start a new game and reset all state
+  const newGame = () => {
+    // Reset game state
+    model.activePlayer = "player";
+    model.currentRoundNumber = 1;
+    model.playerRoundWon = 0;
+    model.playerCurrentScore = 0;
+    model.computerCurrentScore = 0;
+    model.computerRoundWon = 0;
+
+    // Reset UI
+    view.gameRulesScreen.classList.toggle("hide");
+    view.updateRoundNumber(model.currentRoundNumber);
+    view.rollDiceBtn.removeAttribute("disabled");
+    view.roundNumberContainer.style.visibility = "visible";
+    view.curentTurnEl.style.visibility = "visible";
+    view.diceContainer.style.visibility = "visible";
+    view.rollDiceBtn.style.visibility = "visible";
+    view.currentScoreEls.forEach((el) => (el.style.visibility = "visible"));
+    view.winnerEl.classList.remove("player");
+    view.winnerEl.classList.remove("computer");
+
+    view.updatePlayerCurrentScore();
+    view.updateComputerCurrentScore();
+    view.updatePlayerRoundWon();
+    view.updateComputerRoundWon();
+    view.renderCurrentTurn(model.activePlayer);
+  };
   // Function to start the game by displaying game instructions
   const startGame = () => {
     view.gameRulesScreen.classList.toggle("hide");
@@ -167,6 +194,8 @@ function controller() {
         rollDice();
         model.activePlayer = "player";
         view.renderCurrentTurn(model.activePlayer);
+        view.rollDiceBtn.removeAttribute("disabled");
+        view.newGameBtn.removeAttribute("disabled");
       }, 2000);
     }
   };
@@ -236,6 +265,7 @@ function controller() {
   const checkGameWinner = () => {
     if (model.currentRoundNumber > TOTAL_ROUNDS) {
       view.rollDiceBtn.setAttribute("disabled", true);
+      view.newGameBtn.removeAttribute("disabled");
       if (model.playerRoundWon > model.computerRoundWon) {
         view.renderWinner("player");
       } else {
@@ -246,6 +276,9 @@ function controller() {
 
   // Function to roll the dice and update scores accordingly and check for winner
   const rollDice = () => {
+    view.rollDiceBtn.setAttribute("disabled", true);
+    view.newGameBtn.setAttribute("disabled", true);
+
     const [dice1, dice2] = rollTwoDice();
     const maximum = getMaxCombination(dice1, dice2);
 
@@ -266,7 +299,7 @@ function controller() {
     }
   };
 
-  return { init, startGame, rollDice };
+  return { init, startGame, rollDice, newGame };
 }
 
 /*
@@ -279,4 +312,4 @@ view.gameInstructionBeginBtn.addEventListener("click", controller().startGame);
 // Click event for the roll dice button to trigger dice rolling
 view.rollDiceBtn.addEventListener("click", controller().rollDice);
 // Click event for the new game button to trigger new game
-view.newGameBtn.addEventListener("click", () => location.reload());
+view.newGameBtn.addEventListener("click", controller().newGame);
