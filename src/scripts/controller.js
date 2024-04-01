@@ -179,6 +179,8 @@ function controller() {
 
   // Function to roll the dice and update scores accordingly and check for winner
   const rollDice = () => {
+    // play the button click sound
+    view.rollDiceBtnClickSound.play();
     // Rolls two dice on the UI
     const [dice1, dice2] = rollTwoDice();
     const maximum = getMaxCombination(dice1, dice2);

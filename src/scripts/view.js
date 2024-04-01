@@ -26,7 +26,8 @@ const view = {
     ".computer-container .current-turn"
   ),
   currentTurnEl: document.querySelector(".current-turn"),
-
+  rollDiceBtnClickSound: document.querySelector("#btn-click-sound"),
+  winnerSoundEffects: document.querySelector("#winner-sound"),
   // Function to update the round number displayed on the UI
   updateRoundNumber: (round) => {
     view.roundNumberEl.textContent = round;
@@ -90,6 +91,8 @@ const view = {
 
   // Function to render the winner of the game on the UI
   renderWinner: (winner) => {
+    // play winner audio
+    view.winnerSoundEffects.play();
     // hide player turn UI
     view.currentTurnEl.classList.remove("player");
 

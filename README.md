@@ -38,16 +38,19 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - I want to know if I have won or lost at the end of the last round.
 - I want option to reset / start a new game without refreshing the page.
 - I want the game to be responsive so that I can play it on different devices.
+- I want sound effects on each dice roll.
+- I want sound effects upon game result.
 
 ---
 
 # Core Game
 
 - Basic game (Player V/s Computer)
-- Display score
+- Roll dice with sound effects
+- Display score for each round
 - Display rounds won
-- Display winner
-- New Game/Reset
+- Display winner with sound effects
+- New Game
 
 ---
 
@@ -70,6 +73,8 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - [x] Render final result and winner
 - [x] Refactor to improve code readability and maintainability
 - [x] Publish application on Github pages
+- [x] Refactor controller function
+- [x] Add sound effects for the game result and roll dice
 
 ---
 
