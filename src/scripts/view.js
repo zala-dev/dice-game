@@ -93,18 +93,18 @@ const view = {
     // hide player turn UI
     view.currentTurnEl.classList.remove("player");
 
-    // hide dice images
-    view.diceContainer.style.visibility = "hidden";
-
-    // hide roll btn
-    view.rollDiceBtn.style.visibility = "hidden";
-
     // hide current round number display
     view.roundNumberContainer.style.visibility = "hidden";
 
-    // delay hide score
+    // delay elements hide
     setTimeout(() => {
+      // hide current score board
       view.currentScoreEls.forEach((el) => (el.style.visibility = "hidden"));
+      // hide dice images
+      view.diceContainer.style.visibility = "hidden";
+
+      // hide roll btn
+      view.rollDiceBtn.style.visibility = "hidden";
     }, 2000);
 
     // check the winner and update UI
