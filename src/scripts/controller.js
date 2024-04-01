@@ -103,12 +103,8 @@ function controller() {
 
   // Function to roll two dice and ensure they are different
   const rollTwoDice = () => {
-    let dice1 = rollSingleDice();
-    let dice2 = rollSingleDice();
-
-    while (dice2 === dice1) {
-      dice2 = rollSingleDice();
-    }
+    const dice1 = rollSingleDice();
+    const dice2 = rollSingleDice();
 
     return [dice1, dice2];
   };
@@ -134,13 +130,40 @@ function controller() {
 
   // Function to check winner of each round
   const checkRoundWinner = () => {
-    if (model.playerCurrentScore > model.computerCurrentScore) {
+    const playerScore = model.playerCurrentScore;
+    const computerScore = model.computerCurrentScore;
+
+    // check if player's score is higher than the computer's score
+    if (playerScore > computerScore) {
       model.playerRoundWon++;
-      view.updatePlayerRoundWon(model.playerRoundWon);
-    } else if (model.computerCurrentScore > model.playerCurrentScore) {
-      model.computerRoundWon++;
-      view.updateComputerRoundWon(model.computerRoundWon);
     }
+
+    // check if the comptuer's score is higher than the player's score
+    if (computerScore > playerScore) {
+      model.computerRoundWon++;
+    }
+
+    // check if scores are equal
+    if (playerScore === computerScore) {
+      model.playerRoundWon++;
+      model.computerRoundWon++;
+    }
+
+    // update the view with updated round won counts for both player and computer
+    view.updatePlayerRoundWon(model.playerRoundWon);
+    view.updateComputerRoundWon(model.computerRoundWon);
+    // if (model.playerCurrentScore > model.computerCurrentScore) {
+    //   model.playerRoundWon++;
+    //   view.updatePlayerRoundWon(model.playerRoundWon);
+    // } else if (model.computerCurrentScore > model.playerCurrentScore) {
+    //   model.computerRoundWon++;
+    //   view.updateComputerRoundWon(model.computerRoundWon);
+    // } else {
+    //   model.playerRoundWon++;
+    //   model.computerRoundWon++;
+    //   view.updatePlayerRoundWon(model.playerRoundWon);
+    //   view.updateComputerRoundWon(model.computerRoundWon);
+    // }
   };
 
   // Function to check winner of the game
