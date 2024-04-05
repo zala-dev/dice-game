@@ -75,6 +75,7 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 - [x] Publish application on Github pages
 - [x] Refactor controller function
 - [x] Add sound effects for the game result and roll dice
+- [x] Complete Game Version 1.0
 
 ---
 
