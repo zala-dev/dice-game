@@ -8,7 +8,7 @@ The objective is to win maximum rounds. The game is played with two six-sided di
 
 # Gameplay Instructions
 
-Each player rolls dice on his turn and scores the highest value number which can be made with the two dice numbers. The player with a higher score in each rounds wins the round.
+Each player rolls dice on his turn and scores the highest value number which can be made with the two dice numbers. The player with a higher score in each rounds wins the round. In the event of a tie, both players are considered winners for that round.
 
 The player winning the maximum number of rounds out of three rounds wins the game.
 
