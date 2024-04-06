@@ -20,6 +20,10 @@ The player winning the maximum number of rounds out of three rounds wins the gam
 
 ![hifi wireframe](assets/wireframe/dicegame-hifi-wireframe.drawio.png)
 
+# Gameplay screenshots
+
+![gameplay screenshots](assets/wireframe/gameplay-screenshot.png)
+
 # Technologies used
 
 - HTML
